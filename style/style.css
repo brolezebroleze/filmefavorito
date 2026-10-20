@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+}
+
+canvas {
+    display: block;
+}
+
+nav,
+.liquid-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    margin: 20px auto;
+    width: max-content;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a,
+.liquid-nav a {
+    font-family: inherit;
+    color: rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+nav a:hover,
+.liquid-nav a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.liquid-nav a.active {
+    color: #ffffff;
+}
+
+.pill {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: calc(100% - 16px);
+    background: transparent;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.2),
+        inset 0 -1px 1px rgba(255, 255, 255, 0.05),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    z-index: 1;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+section {
+    min-height: 100vh;
+    padding: 120px 40px 40px;
+}
+
+.pill {
+    left: 0;
+    width: 0;
+    transition: none;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+section {
+    display: center;
+    padding: 20px;
+    margin: 40px 16px 16px;
+    background: rgba(10, 14, 26, 0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 8px;
+}
+
+.imagem-sinopse img {
+    width: 280px;
+    border-radius: 8px;
+}
