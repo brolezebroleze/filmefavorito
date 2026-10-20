@@ -4,11 +4,19 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: clamp(14px, 1.1vw, 32px);
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
     background-color: #000;
     color: #fff;
     font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
 }
 
 #matrix {
@@ -21,77 +29,6 @@ body {
     pointer-events: none;
 }
 
-.container {
-    position: relative;
-    z-index: 1;
-    padding: 40px;
-}
-
-canvas {
-    display: block;
-}
-
-nav,
-.liquid-nav {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 16px;
-    margin: 20px auto;
-    width: max-content;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-nav a,
-.liquid-nav a {
-    font-family: inherit;
-    color: rgba(255, 255, 255, 0.25);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 10px 20px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-nav a:hover,
-.liquid-nav a:hover {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.liquid-nav a.active {
-    color: #ffffff;
-}
-
-.pill {
-    position: absolute;
-    top: 8px;
-    left: 0;
-    height: calc(100% - 16px);
-    background: transparent;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    box-shadow:
-        inset 0 1px 1px rgba(255, 255, 255, 0.2),
-        inset 0 -1px 1px rgba(255, 255, 255, 0.05),
-        0 4px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 50px;
-    z-index: 1;
-    pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 header {
     position: fixed;
     top: 0;
@@ -102,30 +39,172 @@ header {
     z-index: 10;
 }
 
-section {
-    min-height: 100vh;
-    padding: 120px 40px 40px;
+.liquid-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1rem;
+    margin: 1.25rem auto;
+    width: max-content;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.liquid-nav a {
+    position: relative;
+    z-index: 2;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.25rem;
+    color: rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: color 0.3s ease;
+}
+
+.liquid-nav a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.liquid-nav a.active {
+    color: #fff;
 }
 
 .pill {
+    position: absolute;
+    top: 0.5rem;
     left: 0;
     width: 0;
-    transition: none;
+    height: calc(100% - 1rem);
     background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.2),
+        inset 0 -1px 1px rgba(255, 255, 255, 0.05),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    z-index: 1;
+    pointer-events: none;
+    transition: none;
 }
 
-
 section {
-    display: center;
-    padding: 20px;
-    margin: 40px 16px 16px;
-    background: rgba(10, 14, 26, 0.55);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    min-height: 100vh;
+    padding: 6rem 1.5rem 2rem;
+    margin: 0 1rem;
+    background: transparent;
+}
+
+.filme-sinopse {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    display: grid;
+    grid-template-columns: 1fr 17.5rem;
+    grid-template-areas:
+        "titulo titulo"
+        "texto  imagem";
+    gap: 1rem 2rem;
+    align-items: start;
+}
+
+.filme-sinopse h3,
+#trailer h3,
+#elenco h3 {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #0F3;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 255, 51, 0.3);
+}
+
+.filme-sinopse h3 {
+    grid-area: titulo;
+    justify-self: start;
+}
+
+#trailer h3 {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.filme-sinopse p {
+    grid-area: texto;
+    text-align: justify;
+    line-height: 1.6;
+    color: rgba(166, 255, 166, 0.75);
+}
+
+.imagem-sinopse {
+    grid-area: imagem;
 }
 
 .imagem-sinopse img {
-    width: 280px;
+    width: 100%;
+    display: block;
     border-radius: 8px;
 }
+
+.trailer-video {
+    width: min(56rem, 100%);
+    margin: 1.25rem auto 0;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.trailer-video video {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+    .filme-sinopse {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "titulo"
+            "imagem"
+            "texto";
+    }
+
+    .imagem-sinopse img {
+        max-width: 17.5rem;
+        margin: 0 auto;
+    }
+
+    .liquid-nav {
+        gap: 2px;
+        padding: 0.4rem 0.5rem;
+    }
+
+    .liquid-nav a {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .pill {
+        top: 0.4rem;
+        height: calc(100% - 0.8rem);
+    }
+}
+
+
+

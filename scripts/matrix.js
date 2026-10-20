@@ -1,15 +1,6 @@
 const c = document.getElementById("matrix");
 const ctx = c.getContext("2d");
 
-function resizeCanvas() {
-    c.height = window.innerHeight;
-    c.width = window.innerWidth;
-}
-
-resizeCanvas();
-
-window.addEventListener("resize", resizeCanvas);
-
 const letters = [
     "日","ﾊ","ﾐ","ﾋ","ｰ","ｳ","ｼ","ﾅ","ﾓ","ﾆ","ｻ","ﾜ",
     "ﾂ","ｵ","ﾘ","ｱ","ﾎ","ﾃ","ﾏ","ｹ","ﾒ","ｴ","ｶ","ｷ",
@@ -17,24 +8,23 @@ const letters = [
     "=","*","+","-","<",">","¦","｜","ﾘ"
 ];
 
-const fontSize = 18;
+const getFontSize = () => Math.max(16, Math.round(window.innerWidth * 0.0115));
 
-let columns = Math.floor(c.width / fontSize);
-
+let fontSize = getFontSize();
+let columns = 0;
 let drops = [];
-for (let x = 0; x < columns; x++) {
-    drops[x] = 1;
+let elementsRevealed = false;
+
+function setup() {
+    c.height = window.innerHeight;
+    c.width = window.innerWidth;
+    fontSize = getFontSize();
+    columns = Math.floor(c.width / fontSize);
+    drops = Array.from({ length: columns }, () => 1);
 }
 
-window.addEventListener("resize", () => {
-    columns = Math.floor(c.width / fontSize);
-    drops = [];
-    for (let x = 0; x < columns; x++) {
-        drops[x] = 1;
-    }
-});
-
-let elementsRevealed = false;
+setup();
+window.addEventListener("resize", setup);
 
 function draw() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -64,8 +54,7 @@ function draw() {
 }
 
 function revealSiteElements() {
-    const elements = document.querySelectorAll(".reveal-on-start");
-    elements.forEach(el => {
+    document.querySelectorAll(".reveal-on-start").forEach(el => {
         el.classList.add("visible");
     });
 }

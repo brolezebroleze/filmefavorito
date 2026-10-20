@@ -10,66 +10,113 @@
 </head>
 
 <body>
-    <canvas id="matrix"></canvas>
+  <canvas id="matrix"></canvas>
 
-    <header>
-      <nav class="liquid-nav">
-        <div class="pill"></div>
-        <a href="#sinopse" class="nav-item active">Sinopse</a>
-        <a href="#trailer" class="nav-item">Trailer</a>
-        <a href="#elenco" class="nav-item">Elenco</a>
-        <a href="#curiosidades" class="nav-item">Curiosidades</a>
-        <a href="#avaliacao" class="nav-item">Avaliação</a>
-      </nav>
-    </header>
+  <header>
+    <nav class="liquid-nav">
+      <div class="pill"></div>
+      <a href="#sinopse" class="nav-item active">Sinopse</a>
+      <a href="#trailer" class="nav-item">Trailer</a>
+      <a href="#elenco" class="nav-item">Elenco</a>
+      <a href="#curiosidades" class="nav-item">Curiosidades</a>
+      <a href="#avaliacao" class="nav-item">Avaliação</a>
+    </nav>
+  </header>
 
-    <main>
-      <section id="sinopse">
-        <div class="filme-sinopse">
-          <h3>Sinopse</h3>
-          <p>Em um futuro próximo, Thomas Anderson (Keanu Reeves), um jovem programador de computador que mora em um
-            cubículo
-            escuro, é atormentado por estranhos pesadelos nos quais encontra-se conectado por cabos e contra sua
-            vontade, em um
-            imenso sistema de computadores do futuro. Em todas essas ocasiões, acorda gritando no exato momento em que
-            os
-            eletrodos estão para penetrar em seu cérebro. À medida que o sonho se repete, Anderson começa a ter dúvidas
-            sobre a
-            realidade. Por meio do encontro com os misteriosos Morpheus (Laurence Fishburne) e Trinity (Carrie-Anne
-            Moss), Thomas
-            descobre que é, assim como outras pessoas, vítima do Matrix, um sistema inteligente e artificial que
-            manipula a mente
-            das pessoas, criando a ilusão de um mundo real enquanto usa os cérebros e corpos dos indivíduos para
-            produzir energia.
-            Morpheus, entretanto, está convencido de que Thomas é Neo, o aguardado messias capaz de enfrentar o Matrix e
-            conduzir
-            as pessoas de volta à realidade e à liberdade.</p>
-          <div class="imagem-sinopse">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmwop0R4nDqogJaFlLBHWyIC-Aj6DcotGoxSDNMxmBmmUG8svLJJF8ZPY&s=10">
-          </div>
+  <main>
+    <section id="sinopse">
+      <div class="filme-sinopse">
+        <h3>Sinopse</h3>
+        <p>Em um futuro próximo, Thomas Anderson (Keanu Reeves), um jovem programador de computador que mora em um
+          cubículo
+          escuro, é atormentado por estranhos pesadelos nos quais encontra-se conectado por cabos e contra sua
+          vontade, em um
+          imenso sistema de computadores do futuro. Em todas essas ocasiões, acorda gritando no exato momento em que
+          os
+          eletrodos estão para penetrar em seu cérebro. À medida que o sonho se repete, Anderson começa a ter dúvidas
+          sobre a
+          realidade. Por meio do encontro com os misteriosos Morpheus (Laurence Fishburne) e Trinity (Carrie-Anne
+          Moss), Thomas
+          descobre que é, assim como outras pessoas, vítima do Matrix, um sistema inteligente e artificial que
+          manipula a mente
+          das pessoas, criando a ilusão de um mundo real enquanto usa os cérebros e corpos dos indivíduos para
+          produzir energia.
+          Morpheus, entretanto, está convencido de que Thomas é Neo, o aguardado messias capaz de enfrentar o Matrix e
+          conduzir
+          as pessoas de volta à realidade e à liberdade.</p>
+        <div class="imagem-sinopse">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmwop0R4nDqogJaFlLBHWyIC-Aj6DcotGoxSDNMxmBmmUG8svLJJF8ZPY&s=10"
+            alt="Matrix">
         </div>
-        </div>
-        </div>
-        </div>
-      </section>
-      <section id="trailer">
-        <h2>Trailer</h2>
-      </section>
-      <section id="elenco">
-        <h2>Elenco</h2>
-      </section>
-      <section id="curiosidades">
-        <h2>Curiosidades</h2>
-      </section>
-      <section id="avaliacao">
-        <h2>Avaliação</h2>
-      </section>
-    </main>
+      </div>
+    </section>
+    <section id="trailer">
+      <h3>Trailer</h3>
+      <div class="trailer-video">
+        <video controls>
+          <source src="trailer.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+    <section id="elenco">
+      <div class="filme-elenco">
+        <h3>Elenco</h3>
+        <div class="elenco-grid">
 
-    <script src="scripts/matrix.js"></script>
-    <script src="scripts/nav.js"></script>
-  </body>
+          <article class="ator-card">
+            <div class="ator-foto">
+              <img src="fotos/keanu-reeves.jpg" alt="Keanu Reeves">
+            </div>
+            <h4>Keanu Reeves</h4>
+            <span>Neo / Thomas Anderson</span>
+          </article>
+
+          <article class="ator-card">
+            <div class="ator-foto">
+              <img src="fotos/laurence-fishburne.jpg" alt="Laurence Fishburne">
+            </div>
+            <h4>Laurence Fishburne</h4>
+            <span>Morpheus</span>
+          </article>
+
+          <article class="ator-card">
+            <div class="ator-foto">
+              <img src="fotos/carrie-anne-moss.jpg" alt="Carrie-Anne Moss">
+            </div>
+            <h4>Carrie-Anne Moss</h4>
+            <span>Trinity</span>
+          </article>
+
+          <article class="ator-card">
+            <div class="ator-foto">
+              <img src="fotos/hugo-weaving.jpg" alt="Hugo Weaving">
+            </div>
+            <h4>Hugo Weaving</h4>
+            <span>Agente Smith</span>
+          </article>
+
+          <article class="ator-card">
+            <div class="ator-foto">
+              <img src="fotos/joe-pantoliano.jpg" alt="Joe Pantoliano">
+            </div>
+            <h4>Joe Pantoliano</h4>
+            <span>Cypher</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <section id="curiosidades">
+      <h2>Curiosidades</h2>
+    </section>
+    <section id="avaliacao">
+      <h2>Avaliação</h2>
+    </section>
+  </main>
+  <script src="scripts/matrix.js"></script>
+  <script src="scripts/nav.js"></script>
+</body>
 
 
 </html>
